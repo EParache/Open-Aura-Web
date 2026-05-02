@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Open AURA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+    .faq-open .faq-answer { max-height: 20rem; padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .faq-open .faq-chevron { transform: rotate(180deg); }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-gray-950 to-gray-900 text-white min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-gray-950/85 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.svg" alt="Open AURA" class="w-8 h-8">
+        <span class="text-white font-semibold text-lg">Open AURA</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+        <a href="instalacion.html" class="text-gray-400 hover:text-white transition">Instalación</a>
+        <a href="demo.html" class="text-gray-400 hover:text-white transition">Demo</a>
+        <a href="faq.html" class="text-teal-400">FAQ</a>
+        <a href="https://github.com/EParache/OpenAura" target="_blank"
+           class="text-gray-400 hover:text-white transition flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white transition" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col gap-3 px-6 py-4 border-t border-gray-800 bg-gray-950 text-sm font-medium">
+      <a href="index.html" class="text-gray-400">Inicio</a>
+      <a href="instalacion.html" class="text-gray-400">Instalación</a>
+      <a href="demo.html" class="text-gray-400">Demo</a>
+      <a href="faq.html" class="text-teal-400">FAQ</a>
+      <a href="https://github.com/EParache/OpenAura" target="_blank" class="text-gray-400">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="text-center py-16 px-6">
+    <h1 class="text-5xl font-bold mb-4">Preguntas frecuentes</h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      Respuestas directas sobre Open AURA.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-6 pb-20">
+    <div class="space-y-3">
+
+      <!-- Pregunta 1 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Qué es Open AURA?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Es un gestor de biblioteca multimedia autoalojado que escanea directorios locales, indexa fotos y videos, genera miniaturas y permite organizarlos en álbumes. Todo corre en tu propia infraestructura.
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Qué formatos de archivo soporta?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Imágenes: HEIC/HEIF, JPEG, PNG, WebP. Videos: MP4, MOV, AVI, MKV. La conversión de HEIC se realiza al vuelo mediante pillow-heif.
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Necesito conexión a internet para usarlo?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          No. Una vez instalado, funciona completamente offline en tu red local. Solo necesitás internet para la instalación inicial y para actualizaciones.
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿En qué sistemas operativos funciona?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Cualquier sistema que soporte Docker (Linux, macOS, Windows) o Python 3.10+. El frontend Flutter compila para web y escritorio Linux de forma nativa.
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Cómo funciona el escaneo de archivos?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Seleccionás un directorio desde la interfaz, Open AURA recorre recursivamente todas las carpetas, detecta archivos multimedia por su extensión, genera miniaturas y los indexa en una base de datos SQLite local.
+        </div>
+      </div>
+
+      <!-- Pregunta 6 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Mis archivos originales se modifican?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          No. Open AURA es de solo lectura. Nunca modifica, mueve ni elimina tus archivos originales. Solo genera miniaturas y metadatos en su propia base de datos.
+        </div>
+      </div>
+
+      <!-- Pregunta 7 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Soporta múltiples usuarios?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Actualmente está diseñado para uso personal o familiar en red local, sin sistema de autenticación. Para entornos multiusuario se recomienda colocarlo detrás de un proxy inverso con autenticación (nginx, traefik).
+        </div>
+      </div>
+
+      <!-- Pregunta 8 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Cómo hago un backup de mi biblioteca?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Hacé backup de tus archivos originales como siempre. La base de datos de Open AURA (SQLite) y las miniaturas generadas pueden respaldarse aparte, pero son regenerables. Lo importante son tus fotos y videos originales.
+        </div>
+      </div>
+
+      <!-- Pregunta 9 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Puedo acceder desde fuera de mi red local?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Open AURA está pensado para red local. Si necesitás acceso remoto, podés usar un túnel VPN (WireGuard, Tailscale) o exponerlo con un proxy inverso y HTTPS. Evaluá los riesgos de seguridad antes de exponerlo a internet.
+        </div>
+      </div>
+
+      <!-- Pregunta 10 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Tiene aplicación móvil?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Actualmente el frontend compila para web y escritorio Linux. La interfaz web es responsive y funciona correctamente en navegadores móviles. No hay app nativa para iOS/Android en este momento.
+        </div>
+      </div>
+
+      <!-- Pregunta 11 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Cómo puedo contribuir al proyecto?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          El código está en <a href="https://github.com/EParache/OpenAura" target="_blank" class="text-teal-400 hover:underline">GitHub</a>. Podés reportar errores, sugerir funcionalidades o enviar pull requests. Toda contribución es bienvenida.
+        </div>
+      </div>
+
+      <!-- Pregunta 12 -->
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl overflow-hidden faq-item cursor-pointer" onclick="this.classList.toggle('faq-open')">
+        <div class="px-6 py-4 flex items-center justify-between">
+          <h3 class="font-medium text-white pr-4">¿Funciona en Raspberry Pi?</h3>
+          <span class="text-teal-400 text-lg transition-transform duration-300 faq-chevron">▾</span>
+        </div>
+        <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+          Sí. El backend es liviano (FastAPI + SQLite) y está optimizado para hardware de bajos recursos. La generación de miniaturas puede ser más lenta en una Raspberry Pi, pero el funcionamiento general es fluido.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="text-center py-12 px-6 border-t border-gray-800">
+    <p class="text-gray-400 mb-4">¿No encontraste lo que buscabas?</p>
+    <a href="https://github.com/EParache/OpenAura/issues" target="_blank"
+       class="inline-block bg-teal-500 px-8 py-3 rounded-xl hover:bg-teal-400 transition font-medium">
+      Abrí un issue en GitHub
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 bg-gray-950/50">
+    <div class="max-w-6xl mx-auto px-6 py-12 grid sm:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="logo.svg" alt="" class="w-6 h-6">
+          <span class="text-white font-semibold">Open AURA</span>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed">Gestor de biblioteca multimedia autoalojado. Software libre.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3 text-sm">Navegación</h4>
+        <ul class="text-gray-500 text-sm space-y-2">
+          <li><a href="index.html" class="hover:text-teal-400 transition">Inicio</a></li>
+          <li><a href="instalacion.html" class="hover:text-teal-400 transition">Instalación</a></li>
+          <li><a href="demo.html" class="hover:text-teal-400 transition">Demo</a></li>
+          <li><a href="faq.html" class="hover:text-teal-400 transition">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3 text-sm">Proyecto</h4>
+        <ul class="text-gray-500 text-sm space-y-2">
+          <li><a href="https://github.com/EParache/OpenAura" target="_blank" class="hover:text-teal-400 transition">Repositorio</a></li>
+          <li><a href="https://github.com/EParache/OpenAura/issues" target="_blank" class="hover:text-teal-400 transition">Reportar error</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3 text-sm">Licencia</h4>
+        <p class="text-gray-500 text-sm">MIT License</p>
+        <p class="text-gray-500 text-sm mt-1">Código abierto. Usá, modificá y compartí libremente.</p>
+      </div>
+    </div>
+    <div class="text-center text-gray-600 text-xs py-5 border-t border-gray-800/50">
+      © 2026 Open AURA — Desarrollado con dedicación para la comunidad.
+    </div>
+  </footer>
+
+</body>
+</html>
