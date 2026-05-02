@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Instalación — Open AURA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    pre { overflow-x: auto; }
+    .step-line { border-left: 2px solid rgb(20 184 166); }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-gray-950 to-gray-900 text-white min-h-screen">
+
+  <!-- NAV -->
+  <nav class="flex items-center justify-between px-6 py-5 max-w-6xl mx-auto">
+    <a href="index.html" class="text-teal-400 hover:text-teal-300 transition text-lg font-semibold">
+      ← Open AURA
+    </a>
+    <a href="index.html#instalar"
+       class="bg-teal-500 px-5 py-2 rounded-xl hover:bg-teal-400 transition text-sm font-medium">
+      Volver al inicio
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="text-center py-16 px-6">
+    <h1 class="text-5xl font-bold mb-4">Guía de Instalación</h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      Ten Open AURA corriendo en tu servidor en menos de 5 minutos.
+    </p>
+  </section>
+
+  <!-- STEPPER: Elige tu método -->
+  <section class="max-w-5xl mx-auto px-6 pb-10">
+    <div class="grid md:grid-cols-2 gap-6 mb-4">
+      <a href="#docker" class="bg-teal-500/10 border border-teal-500/40 rounded-2xl p-6 hover:bg-teal-500/20 transition group">
+        <span class="text-3xl block mb-3">🐳</span>
+        <h3 class="text-xl font-semibold mb-1 group-hover:text-teal-300 transition">Docker</h3>
+        <p class="text-gray-400 text-sm">Recomendado. Un solo comando.</p>
+      </a>
+      <a href="#manual" class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/80 transition group">
+        <span class="text-3xl block mb-3">🐍</span>
+        <h3 class="text-xl font-semibold mb-1 group-hover:text-teal-300 transition">Manual</h3>
+        <p class="text-gray-400 text-sm">Python + Flutter. Control total.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- DOCKER -->
+  <section id="docker" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-2 flex items-center gap-3">
+      <span class="text-teal-400">01</span> Opción 1: Docker
+    </h2>
+    <p class="text-gray-400 mb-8">Método recomendado para la mayoría de usuarios.</p>
+
+    <!-- Prerrequisitos -->
+    <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 mb-6">
+      <h4 class="text-sm font-semibold text-teal-400 uppercase tracking-wider mb-3">Prerrequisitos</h4>
+      <div class="grid sm:grid-cols-2 gap-4 text-gray-300 text-sm">
+        <div class="flex items-start gap-3 p-3 bg-gray-900/50 rounded-xl">
+          <span class="text-teal-400 mt-0.5">✓</span>
+          <div>
+            <p class="font-medium text-white">Docker</p>
+            <p class="text-gray-500 text-xs">v20.10 o superior</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-gray-900/50 rounded-xl">
+          <span class="text-teal-400 mt-0.5">✓</span>
+          <div>
+            <p class="font-medium text-white">Docker Compose</p>
+            <p class="text-gray-500 text-xs">v2.0 o superior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 1 -->
+    <div class="step-line pl-6 mb-8 ml-2">
+      <h3 class="text-lg font-semibold mb-3">
+        <span class="text-teal-400 text-sm font-mono mr-2">Paso 1</span>
+        Clonar el repositorio
+      </h3>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>git clone https://github.com/EParache/OpenAura.git
+cd OpenAura</code></pre>
+      </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="step-line pl-6 mb-8 ml-2">
+      <h3 class="text-lg font-semibold mb-3">
+        <span class="text-teal-400 text-sm font-mono mr-2">Paso 2</span>
+        Configurar directorio de fotos
+      </h3>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code><span class="text-gray-500"># Crea el archivo .env con la ruta a tus fotos</span>
+echo <span class="text-green-400">"PHOTOS_DIR=/ruta/a/tus/fotos"</span> > .env</code></pre>
+      </div>
+      <p class="text-xs text-gray-500 mt-2 pl-1">Reemplaza <code class="text-teal-400">/ruta/a/tus/fotos</code> con la carpeta donde guardas tus imágenes y videos.</p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="step-line pl-6 mb-8 ml-2">
+      <h3 class="text-lg font-semibold mb-3">
+        <span class="text-teal-400 text-sm font-mono mr-2">Paso 3</span>
+        Iniciar los contenedores
+      </h3>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>docker compose up -d</code></pre>
+      </div>
+    </div>
+
+    <!-- Paso 4 -->
+    <div class="step-line pl-6 mb-10 ml-2">
+      <h3 class="text-lg font-semibold mb-3">
+        <span class="text-teal-400 text-sm font-mono mr-2">Paso 4</span>
+        Abrir la aplicación
+      </h3>
+      <div class="bg-gray-800/40 border border-gray-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5">
+        <div class="bg-gray-900 border border-gray-600 rounded-lg px-4 py-2 flex items-center gap-2 w-full sm:w-auto">
+          <span class="text-teal-400 text-sm">🌐</span>
+          <code class="text-teal-300 text-lg font-mono">http://localhost:8000</code>
+        </div>
+        <span class="text-gray-500 text-sm">← Abrí esta URL en tu navegador</span>
+      </div>
+    </div>
+
+    <!-- Diagrama Docker -->
+    <div class="bg-gray-800/30 border border-gray-700/50 rounded-2xl p-8 mb-6">
+      <h4 class="text-sm font-semibold text-teal-400 uppercase tracking-wider mb-6 text-center">Arquitectura del contenedor</h4>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+        <div class="bg-gray-900 border border-gray-600 rounded-xl px-6 py-4 w-44">
+          <p class="text-xs text-gray-500 mb-1">Tu PC / Servidor</p>
+          <p class="font-mono text-sm text-white">📁 /tus/fotos</p>
+        </div>
+        <span class="text-gray-600 text-2xl rotate-90 sm:rotate-0">→</span>
+        <div class="bg-teal-500/10 border border-teal-500/30 rounded-xl px-6 py-4 w-44">
+          <p class="text-xs text-teal-400 mb-1">Docker Volume</p>
+          <p class="font-mono text-sm text-white">🐳 /photos</p>
+        </div>
+        <span class="text-gray-600 text-2xl rotate-90 sm:rotate-0">→</span>
+        <div class="bg-teal-500/10 border border-teal-500/30 rounded-xl px-6 py-4 w-44">
+          <p class="text-xs text-teal-400 mb-1">Open AURA</p>
+          <p class="font-mono text-sm text-white">⚡ FastAPI :8000</p>
+        </div>
+        <span class="text-gray-600 text-2xl rotate-90 sm:rotate-0">→</span>
+        <div class="bg-gray-900 border border-gray-600 rounded-xl px-6 py-4 w-44">
+          <p class="text-xs text-gray-500 mb-1">Navegador</p>
+          <p class="font-mono text-sm text-white">🌐 localhost:8000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANUAL -->
+  <section id="manual" class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-3xl font-bold mb-2 flex items-center gap-3">
+      <span class="text-teal-400">02</span> Opción 2: Manual
+    </h2>
+    <p class="text-gray-400 mb-8">Para usuarios que prefieren control total sobre el entorno.</p>
+
+    <!-- Prerrequisitos manual -->
+    <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 mb-10">
+      <h4 class="text-sm font-semibold text-teal-400 uppercase tracking-wider mb-3">Prerrequisitos</h4>
+      <div class="grid sm:grid-cols-3 gap-4 text-gray-300 text-sm">
+        <div class="flex items-start gap-3 p-3 bg-gray-900/50 rounded-xl">
+          <span class="text-teal-400 mt-0.5">✓</span>
+          <div>
+            <p class="font-medium text-white">Python</p>
+            <p class="text-gray-500 text-xs">3.10 o superior</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-gray-900/50 rounded-xl">
+          <span class="text-teal-400 mt-0.5">✓</span>
+          <div>
+            <p class="font-medium text-white">Flutter SDK</p>
+            <p class="text-gray-500 text-xs">v3.29 o superior</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-gray-900/50 rounded-xl">
+          <span class="text-teal-400 mt-0.5">✓</span>
+          <div>
+            <p class="font-medium text-white">Git</p>
+            <p class="text-gray-500 text-xs">Cualquier versión</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <h3 class="text-2xl font-semibold mb-4">🔧 Backend (FastAPI)</h3>
+
+    <div class="step-line pl-6 mb-6 ml-2">
+      <h4 class="font-semibold mb-2 text-gray-200">
+        <span class="text-teal-400 text-sm font-mono mr-2">1</span>
+        Clonar y preparar entorno virtual
+      </h4>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>git clone https://github.com/EParache/OpenAura.git
+cd OpenAura/backend
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt</code></pre>
+      </div>
+    </div>
+
+    <div class="step-line pl-6 mb-10 ml-2">
+      <h4 class="font-semibold mb-2 text-gray-200">
+        <span class="text-teal-400 text-sm font-mono mr-2">2</span>
+        Iniciar servidor
+      </h4>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>uvicorn main:app --host 0.0.0.0 --port 8000</code></pre>
+      </div>
+    </div>
+
+    <!-- Frontend -->
+    <h3 class="text-2xl font-semibold mb-4">🖥️ Frontend (Flutter)</h3>
+
+    <div class="step-line pl-6 mb-6 ml-2">
+      <h4 class="font-semibold mb-2 text-gray-200">
+        <span class="text-teal-400 text-sm font-mono mr-2">1</span>
+        Compilar para web
+      </h4>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>cd ../frontend
+flutter pub get
+flutter build web --release</code></pre>
+      </div>
+      <p class="text-xs text-gray-500 mt-2 pl-1">El backend sirve automáticamente los archivos compilados del frontend web.</p>
+    </div>
+
+    <div class="step-line pl-6 mb-8 ml-2">
+      <h4 class="font-semibold mb-2 text-gray-200">
+        <span class="text-teal-400 text-sm font-mono mr-2">2</span>
+        Compilar para escritorio Linux (opcional)
+      </h4>
+      <div class="bg-gray-950 border border-gray-700 rounded-xl overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs text-gray-500 ml-3">Terminal</span>
+        </div>
+        <pre class="p-4 text-sm text-gray-300 font-mono"><code>flutter build linux --release
+./build/linux/x64/release/bundle/aura_frontend</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-3xl font-bold mb-8 text-center">Stack tecnológico</h2>
+    <div class="grid sm:grid-cols-4 gap-4 text-center">
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-5">
+        <span class="text-2xl block mb-2">⚡</span>
+        <p class="font-semibold text-sm">FastAPI</p>
+        <p class="text-gray-500 text-xs">Backend</p>
+      </div>
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-5">
+        <span class="text-2xl block mb-2">🖼️</span>
+        <p class="font-semibold text-sm">SQLite</p>
+        <p class="text-gray-500 text-xs">Base de datos</p>
+      </div>
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-5">
+        <span class="text-2xl block mb-2">📱</span>
+        <p class="font-semibold text-sm">Flutter</p>
+        <p class="text-gray-500 text-xs">Frontend</p>
+      </div>
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-5">
+        <span class="text-2xl block mb-2">🐳</span>
+        <p class="font-semibold text-sm">Docker</p>
+        <p class="text-gray-500 text-xs">Despliegue</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMEROS PASOS -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-3xl font-bold mb-8 text-center">Primeros pasos</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 text-center">
+        <span class="text-3xl block mb-3">📂</span>
+        <h4 class="font-semibold mb-1">Escanea tu directorio</h4>
+        <p class="text-gray-400 text-sm">Usa el ícono de carpeta en la barra lateral para indexar.</p>
+      </div>
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 text-center">
+        <span class="text-3xl block mb-3">🖼️</span>
+        <h4 class="font-semibold mb-1">Explora tu galería</h4>
+        <p class="text-gray-400 text-sm">Las fotos se agrupan automáticamente por mes.</p>
+      </div>
+      <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 text-center">
+        <span class="text-3xl block mb-3">📚</span>
+        <h4 class="font-semibold mb-1">Crea álbumes</h4>
+        <p class="text-gray-400 text-sm">Organiza tu contenido como prefieras.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="text-center py-16 px-6">
+    <h2 class="text-3xl mb-4">¿Todo listo?</h2>
+    <p class="text-gray-400 mb-6">Si encuentras algún problema, abre un issue en GitHub.</p>
+    <a href="https://github.com/EParache/OpenAura" target="_blank"
+       class="inline-block bg-teal-500 px-8 py-3 rounded-xl hover:bg-teal-400 transition font-medium">
+      Reportar en GitHub
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-8 text-gray-500 text-sm border-t border-gray-800">
+    © 2026 Open AURA — Open Source Project
+  </footer>
+
+</body>
+</html>
